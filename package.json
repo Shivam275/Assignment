@@ -1,0 +1,21 @@
+{
+  "name": "orangehrm-qa-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node -e \"require('fs').mkdirSync('reports', { recursive: true })\" && cucumber-js --require step-definitions --format progress --format html:reports/cucumber-report.html",
+    "test:smoke": "node -e \"require('fs').mkdirSync('reports', { recursive: true })\" && cucumber-js --require step-definitions --tags @smoke --format progress --format html:reports/smoke-report.html",
+    "test:regression": "node -e \"require('fs').mkdirSync('reports', { recursive: true })\" && cucumber-js --require step-definitions --tags @regression --format progress --format html:reports/regression-report.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.9.0",
+    "@playwright/test": "^1.63.0"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.4"
+  }
+}
